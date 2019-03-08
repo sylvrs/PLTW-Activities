@@ -52,4 +52,33 @@ def f(x):
             print('Number', x, 'is odd.')
     else:
         print('The input given is not an integer.')
+
+ 
+def guess_once():
+    import random
+    secret = random.randint(1, 4)
+    print('I have a number between 1 and 4 inclusive.')
+    guess = int(input('Guess: '))
+    if guess != secret:
+        string = 'Too high, my number was '
+        if(guess < secret):
+            string = 'Too low - my number was '
+    else:
+        string = 'Right on! My number was '
+    
+    print(string, secret, '!', sep='')
+
+def quiz_decimal(low, high):
+    num = float(input('Type a number between ' + str(low) + ' and ' + str(high) + ':'))
+    if(num < low or num > high):
+        value_string = 'greater'
+        value = high
+        if(num < low):
+            value_string = 'less than'
+            value = low
+        
+        print('No,', num, 'is', value_string, 'than', value)
             
+    else:
+        print('Good!', low, '<=', num, '<=', high)
+        
